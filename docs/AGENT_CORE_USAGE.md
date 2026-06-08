@@ -86,7 +86,7 @@ devil --skills github-pr-workflow -q "open a PR for current branch"
 devil --help                              # full flag list
 ```
 
-The `devil` wrapper is installed at `/usr/local/bin/devil` and points to `/home/ubuntu/devil_agent/agent_core/devil`, which activates the venv, exports `.env`, and runs `cli.py --provider nvidia --model meta/llama-3.3-70b-instruct`.
+The `devil` wrapper is installed at `/usr/local/bin/devil` and points to `/path/to/devil_agent/agent_core/devil`, which activates the venv, exports `.env`, and runs `cli.py --provider nvidia --model meta/llama-3.3-70b-instruct`.
 
 Useful CLI flags:
 - `--query, -q` — one-shot prompt (no REPL)
@@ -116,7 +116,7 @@ Restart the backend service (`sudo systemctl restart devil-backend`) and every c
 | Service | What | Logs |
 |---------|------|------|
 | `devil-backend.service` | Web API (FastAPI, port 8001) | `journalctl -u devil-backend -f` |
-| `devil-gateway.service` | **Agent core gateway (port 9241)** | `tail -f /home/ubuntu/.devil/logs/gateway.log` |
+| `devil-gateway.service` | **Agent core gateway (port 9241)** | `tail -f ~/.devil/logs/gateway.log` |
 | `mongod.service` | MongoDB | `journalctl -u mongod -f` |
 | `nginx.service` | TLS termination + reverse proxy | `tail -f /var/log/nginx/error.log` |
 
@@ -154,7 +154,7 @@ cd ../frontend && yarn install && yarn build
 sudo add-apt-repository -y ppa:deadsnakes/ppa
 sudo apt-get update && sudo apt-get install -y python3.11 python3.11-venv
 curl -LsSf https://astral.sh/uv/install.sh | sh
-cd /home/ubuntu/devil_agent/agent_core
+cd /path/to/devil_agent/agent_core
 uv venv --python 3.11 .venv
 source .venv/bin/activate
 uv pip install -e .

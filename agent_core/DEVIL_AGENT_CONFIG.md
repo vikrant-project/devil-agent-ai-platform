@@ -4,14 +4,14 @@
 - **VPS IP:** 13.62.57.154
 - **Domain:** devils.your-domain.com
 - **Working Directory:** /home/ubuntu/devils-agent
-- **Devil Home:** /home/ubuntu/.devil
+- **Devil Home:** ~/.devil
 - **Python:** 3.11.0rc1
 
 ## API Server
 - **Port:** 9241
 - **Host:** 0.0.0.0
 - **URL:** http://13.62.57.154:9241 or https://devils.your-domain.com
-- **API Key:** 0b9f8387a15913bbd6712b4eb205d395374b6cd0373cd94cfc6785698841e0e0
+- **API Key:** YOUR_API_SERVER_KEY_HERE
 
 ## Endpoints
 - Health: GET /health
@@ -29,7 +29,7 @@
 - Start: sudo systemctl start devil-gateway
 - Stop: sudo systemctl stop devil-gateway
 - Status: sudo systemctl status devil-gateway
-- Logs: tail -f /home/ubuntu/.devil/logs/gateway.log
+- Logs: tail -f ~/.devil/logs/gateway.log
 
 ## NVIDIA API Note
 The NVIDIA API key requires model activation in the NVIDIA console.
@@ -48,5 +48,5 @@ ssh -i devils.pem ubuntu@13.62.57.154
 devil chat
 
 # Or use the API
-curl -H "Authorization: Bearer 0b9f8387a15913bbd6712b4eb205d395374b6cd0373cd94cfc6785698841e0e0" http://13.62.57.154:9241/v1/models
+curl -H "Authorization: Bearer YOUR_API_SERVER_KEY_HERE" http://13.62.57.154:9241/v1/models
 ```

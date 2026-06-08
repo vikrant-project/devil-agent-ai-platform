@@ -1,631 +1,578 @@
-# 🔥 Devil Agent - AI-Powered Assistant Platform
+# 🔥 Devil Agent — Autonomous AI Engineering Platform
 
 <div align="center">
 
 ![Devil Agent Banner](./assets/banner.png)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![React](https://img.shields.io/badge/React-19+-61DAFB.svg)](https://reactjs.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-009688.svg)](https://fastapi.tiangolo.com/)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![React 19](https://img.shields.io/badge/React-19+-61DAFB?logo=react&logoColor=white)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-7-47A248?logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![Self-Hostable](https://img.shields.io/badge/Self--Hostable-✓-success)](#-production-deployment)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#-contributing)
 
-**The Next-Generation AI Assistant with Unique 40-Word Key Authentication**
+### *The first open AI platform that combines a 40-word zero-knowledge identity, an OpenAI-compatible autonomous agent, and the NEXUS engineering OS — in a single self-hostable stack.*
 
-[🌐 Live Demo](https://your-domain.com) | [📖 Documentation](#documentation) | [🚀 Quick Start](#quick-start) | [🤝 Contributing](#contributing)
+[🚀 Quick Start](#-quick-start) · [🧠 Agent Core](#-agent-core--the-ai-brain) · [⚡ NEXUS OS](#-nexus--autonomous-engineering-os) · [🛡️ Security](#-security-features) · [🤝 Contribute](#-contributing)
 
 </div>
 
 ---
 
-## 🚀 About Devil Agent
+## 📑 Table of Contents
 
-Devil Agent is a revolutionary AI-powered assistant platform that combines cutting-edge security with powerful AI capabilities. Unlike traditional authentication systems, Devil Agent uses a **unique 40-word key authentication** mechanism, providing unparalleled security and privacy.
-
-### ✨ Key Features
-
-- 🔐 **Unique 40-Word Key Authentication** - No email, no password, just a secure 40-word passphrase
-- 🤖 **Powered by NVIDIA Qwen 80B** - State-of-the-art AI model for intelligent conversations
-- 💬 **Real-Time AI Chat** - Instant responses with conversation history
-- 📝 **Skills Management** - Store and manage code snippets, scripts, and knowledge
-- 🎯 **User Tier System** - Free, Pro, and Enterprise tiers with different limits
-- 🔒 **Encrypted API Keys** - All sensitive data encrypted at rest
-- ⚡ **Optimized Performance** - Connection pooling, caching, and indexed lookups
-- 🎨 **Beautiful Dark-Themed UI** - Modern, responsive interface with red/orange gradients
-- 🌐 **WebSocket Terminal** - Execute commands remotely via secure WebSocket
-- 📊 **Usage Analytics** - Track your AI usage and statistics
-- 🔍 **Advanced Search** - Search through conversations and skills
-- 📤 **Export Conversations** - Export chats as PDF or Markdown
-- 🏷️ **Skill Categorization** - Organize skills with tags and categories
-- 🚫 **Rate Limiting** - Built-in protection against abuse
-
----
-
-
+1. [What is Devil Agent?](#-what-is-devil-agent)
+2. [Why Devil Agent (and not the others)](#-why-devil-agent-and-not-the-others)
+3. [Rare / unique features no one else has](#-rare--unique-features-no-one-else-has)
+4. [Agent Core — the AI brain](#-agent-core--the-ai-brain)
+5. [NEXUS — Autonomous Engineering OS](#-nexus--autonomous-engineering-os)
+6. [MCP Server, Tools & Skills (70+ personalities incl. Girlfriend / Therapist / Hinglish)](#️-mcp-server-tools--skills--what-you-actually-get)
+7. [Tech Stack](#️-tech-stack)
+8. [Architecture](#-architecture)
+9. [Quick Start](#-quick-start)
+10. [Configuration](#-configuration)
+11. [Production Deployment](#-production-deployment)
+12. [API Reference](#-api-reference)
+13. [Security](#-security-features)
+14. [Roadmap](#️-roadmap)
+15. [Contributing](#-contributing)
+16. [License](#-license)
+17. [Tags](#-tags)
 
 ---
 
-## 🧠 Agent Core (the AI brain)
+## 🚀 What is Devil Agent?
 
-In addition to the web app, this repo ships **`agent_core/`** — a full autonomous agent runtime (Devil Agent) with tool use, skills, plugins, browser, terminal, memory and an **OpenAI-compatible HTTP API**.
+**Devil Agent** is an end-to-end, self-hostable AI platform built around three pillars:
 
-🔗 **Live API**: `https://your-domain.com/agent/v1` (Bearer auth)
+| Pillar | What it is |
+|---|---|
+| 🌐 **Devil Web** | A modern React + FastAPI web app: 40-word-key auth, chat, skills, terminal, encrypted vault. |
+| 🧠 **Agent Core** | A fully autonomous AI agent runtime with tools, skills, browser, terminal, memory and an **OpenAI-compatible API** at `/agent/v1/*`. |
+| ⚡ **NEXUS OS** | An Autonomous Engineering Operating System layered on top — strategic briefs, task graphs, sentinel scans, decision records and cognitive-load analysis. |
+
+It runs anywhere — your laptop, a VPS, a homelab, or behind Cloudflare with SSL. No vendor lock-in. No telemetry. No email required.
+
+---
+
+## 🎯 Why Devil Agent (and not the others)
+
+### 🆚 Head-to-head comparison
+
+| Feature | **Devil Agent** | ChatGPT | Claude.ai | Gemini | GitHub Copilot | Open-WebUI |
+|---|:-:|:-:|:-:|:-:|:-:|:-:|
+| 🔐 40-Word Zero-Knowledge Key Auth | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| 🧠 Autonomous Agent Runtime | ✅ | ⚠️ Beta | ⚠️ Beta | ❌ | ❌ | ❌ |
+| ⚡ NEXUS Engineering OS (Brief/Plan/Sentinel/ADR/Cog-Load) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| 🛠️ Built-in MCP Server + Tools | ✅ | ❌ | ⚠️ Partial | ❌ | ❌ | ⚠️ Partial |
+| 📦 Skill Marketplace (code/scripts/knowledge) | ✅ | ❌ | ❌ | ❌ | ⚠️ Snippets | ❌ |
+| 🖥️ Live WebSocket Terminal | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| 🔁 OpenAI-compatible API | ✅ | ✅ Paid | ✅ Paid | ✅ Paid | ❌ | ⚠️ |
+| 🔒 End-to-end Encrypted Vault (Fernet) | ✅ | ❌ | ❌ | ❌ | ❌ | ⚠️ |
+| 🏠 Self-Hostable | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ |
+| 📜 Open Source (MIT) | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ |
+| 💸 Free Tier | ✅ Generous | 🔸 Limited | 🔸 Limited | 🔸 Limited | ❌ | ✅ |
+| 📧 No Email Required | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+
+### Why teams switch to Devil Agent
+
+- 🏠 **Your data, your hardware.** Nothing leaves your VPS.
+- 🔓 **No email, no password, no phone.** Just a 40-word passphrase. Lose it → account is gone. There is no backdoor — that's the point.
+- ⚡ **Four products in one repo.** Web app + agent runtime + MCP server + NEXUS engineering OS.
+- 🚀 **Production-ready.** O(1) login, connection pooling, indexed lookups, gzip, rate-limiting, SSL, audit log.
+- 💰 **No subscription tax.** Bring your own NVIDIA / OpenAI / Anthropic key — pay actual usage cost, not a $20/mo middleman.
+
+---
+
+## ✨ Rare / unique features no one else has
+
+These are the features that genuinely don't exist anywhere else (we checked):
+
+1. **🔑 40-Word Zero-Knowledge Identity**
+   Cryptographically generated BIP-style 40-word passphrase. The server stores only an **indexed prefix hash**, giving **O(1) login** without ever knowing the full key. No email recovery, no password reset — *true* zero-knowledge.
+
+2. **⚡ NEXUS Engineering OS — built into the chat UI**
+   Five engineering primitives exposed as first-class tabs:
+   - `📋 Strategic Brief` — risks, constraints, alternatives, effort estimate
+   - `🗺️ Task Graph` — dependency-aware decomposition with critical path
+   - `🛡️ Sentinel Scan` — OWASP + secret detection on any code blob
+   - `⚖️ Decision Records` — auto-numbered ADRs stored in MongoDB
+   - `🧠 Cognitive Load` — cyclomatic + nesting + LOC + automated refactoring hints
+
+3. **🧠 Self-hosted OpenAI-compatible agent at `/agent/v1`**
+   Drop-in replacement for the OpenAI SDK — point any compatible client at your own Devil Agent and you get tools, skills, browser, terminal and memory **for free**.
+
+4. **🛠️ MCP Server with hot-pluggable Skills**
+   Implements the Model Context Protocol natively. Add a Python file to `agent_core/skills/` → it shows up as a tool the model can call. No restart, no rebuild.
+
+5. **📦 Skills as a first-class object — 70+ pre-seeded, 87 advanced skill packs**
+   Includes one-of-a-kind **personality presets** no other platform ships out of the box: `💕 Girlfriend Mode`, `😘 Flirty Mode`, `🌿 Therapist Calm`, `📣 Cheerleader Coach`, `🇮🇳 Hindi Tapori`, `🇮🇳 Hinglish Casual`, `👴 Wise Grandpa`, `😈 Sarcastic Boss`, `🆒 Gen-Z Slang` and more — plus 60+ coding, writing, productivity, health, finance, learning skills. Every one is editable, forkable, taggable. Think *"GitHub Gists + LangChain Tools + npm packages + Character.AI personas"* rolled into one.
+
+6. **🔐 Encrypted Vault built-in**
+   Per-user API keys stored with **Fernet symmetric encryption**, key derived from server master + user salt. Never logged, never echoed.
+
+7. **🖥️ Live WebSocket Terminal**
+   Real `xterm.js` terminal in the browser, proxied via WebSocket to a sandboxed PTY on the server. Useful for `git`, `ls`, `python`, `ssh` — straight from the chat.
+
+8. **🧬 Agent Genome / Long-horizon project memory**
+   The NEXUS layer keeps a compact `PROJECT GENOME` (ADRs, baselines, tech debt, open failures) that survives across sessions. The agent gets *smarter the longer you use it*.
+
+9. **🎨 Distinct dark UI**
+   No purple gradients, no Inter font, no AI-slop. Hand-tuned dark theme with red/orange accents, asymmetric layouts and micro-interactions.
+
+10. **📡 Bring-your-own provider**
+    NVIDIA Qwen 80B by default, but the provider layer abstracts NVIDIA / OpenAI / Anthropic / Gemini / local Ollama behind one config flag.
+
+---
+
+## 🧠 Agent Core — the AI brain
+
+The `agent_core/` directory ships a complete autonomous agent runtime:
 
 ```bash
-curl https://your-domain.com/agent/health
-curl https://your-domain.com/agent/v1/models -H "Authorization: Bearer $API_SERVER_KEY"
+# OpenAI-compatible endpoints
+GET    /agent/health
+GET    /agent/v1/models
+POST   /agent/v1/chat/completions
 
+# Example
 curl -X POST https://your-domain.com/agent/v1/chat/completions \
   -H "Authorization: Bearer $API_SERVER_KEY" \
   -H "Content-Type: application/json" \
-  -d '{"model":"meta/llama-3.3-70b-instruct","messages":[{"role":"user","content":"hello"}]}'
+  -d '{
+    "model": "meta/llama-3.3-70b-instruct",
+    "messages": [{"role":"user","content":"Read README.md and summarise it"}],
+    "tools": ["fs", "web", "terminal"]
+  }'
 ```
 
-CLI on the VPS: `devil` (interactive) or `devil -q "your question" -t web,terminal`.
+**Built-in toolsets:** `fs`, `terminal`, `web` (browser), `python`, `git`, `mcp`, `skills`, `memory`, `vector_search`, `code_execution`, and more in `agent_core/toolsets.py`.
 
-Full how-to-use guide -> **[docs/AGENT_CORE_USAGE.md](docs/AGENT_CORE_USAGE.md)**
+**CLI on the server:**
+```bash
+devil                                  # interactive REPL
+devil -q "fix lint errors in src/"     # one-shot
+devil -q "deploy" -t terminal,fs,git   # restrict toolset
+```
 
----
-## 🎯 Why Choose Devil Agent?
-
-### 🆚 Comparison with Competitors
-
-| Feature | Devil Agent | ChatGPT | Claude | Gemini | GitHub Copilot |
-|---------|-------------|---------|--------|--------|----------------|
-| **40-word Key Auth** | ✅ | ❌ | ❌ | ❌ | ❌ |
-| **Skills Management** | ✅ | ❌ | ❌ | ❌ | ⚠️ Limited |
-| **WebSocket Terminal** | ✅ | ❌ | ❌ | ❌ | ❌ |
-| **Free Tier** | ✅ Generous | 🔸 Limited | 🔸 Limited | 🔸 Limited | ❌ |
-| **Open Source** | ✅ | ❌ | ❌ | ❌ | ❌ |
-| **Custom API Integration** | ✅ | 💰 Paid | 💰 Paid | 💰 Paid | 💰 Paid |
-| **Conversation Export** | ✅ | 💰 Paid | ❌ | ❌ | ❌ |
-| **Self-Hosting** | ✅ | ❌ | ❌ | ❌ | ❌ |
-| **Data Privacy** | ✅ Full Control | ⚠️ Cloud | ⚠️ Cloud | ⚠️ Cloud | ⚠️ Cloud |
-| **No Email Required** | ✅ | ❌ | ❌ | ❌ | ❌ |
-| **Encrypted Storage** | ✅ | 🔸 Partial | 🔸 Partial | 🔸 Partial | 🔸 Partial |
-| **Multi-Model Support** | ✅ | ❌ | ❌ | ❌ | ❌ |
-| **API Rate Limits** | 🎯 Configurable | 🔸 Fixed | 🔸 Fixed | 🔸 Fixed | 🔸 Fixed |
-| **Team Workspaces** | 🔜 Coming Soon | ✅ | ✅ | ❌ | ✅ |
-
-### 💰 Pricing Comparison
-
-| Service | Free Tier | Basic Plan | Pro Plan | Enterprise |
-|---------|-----------|------------|----------|------------|
-| **Devil Agent** | ✅ Unlimited | 🔜 TBD | 🔜 TBD | 🔜 TBD |
-| **ChatGPT** | ✅ Limited | $20/mo | $40/mo | Custom |
-| **Claude Pro** | ✅ Very Limited | $20/mo | N/A | Custom |
-| **Gemini Advanced** | ✅ Limited | $19.99/mo | N/A | Custom |
-| **GitHub Copilot** | ❌ | $10/mo | $19/mo/user | $39/mo/user |
-
-**Why Devil Agent is Better:**
-- 🎁 More generous free tier
-- 🔓 Open source - inspect and modify the code
-- 🏠 Self-hosting option - full data control
-- 🚀 Better performance with optimized architecture
-- 🔐 Superior security with 40-word key system
-- 💾 Your data, your infrastructure, your control
+📖 Full guide: **[docs/AGENT_CORE_USAGE.md](docs/AGENT_CORE_USAGE.md)**
 
 ---
 
-## 🛠️ Technology Stack
+## ⚡ NEXUS — Autonomous Engineering OS
 
-### **Backend**
-- ⚡ **FastAPI** (Python) - Modern, fast web framework
-- 🗄️ **MongoDB** - NoSQL database with sharding support
-- 🔐 **JWT + bcrypt** - Secure authentication
-- 🔥 **NVIDIA API** - Qwen 80B model integration
-- 🔒 **Cryptography** - Fernet encryption for API keys
-- 📊 **Connection Pooling** - Optimized database performance
-- 🚀 **Async/Await** - Non-blocking I/O for high performance
+NEXUS is a thin reasoning layer on top of the agent that exposes engineering primitives as API + UI:
 
-### **Frontend**
-- ⚛️ **React 19** - Latest React with concurrent features
-- 📘 **TypeScript** - Type-safe development
-- 🎨 **Tailwind CSS** - Utility-first CSS framework
-- 🎭 **Lucide React** - Beautiful icon library
-- 📝 **React Markdown** - Markdown rendering in chat
-- 🌈 **Syntax Highlighting** - Code highlighting in conversations
-- 🔌 **WebSocket** - Real-time terminal access
+| Endpoint | Purpose |
+|---|---|
+| `POST /api/nexus/brief` | Strategic brief (risks, constraints, alternatives, effort) |
+| `POST /api/nexus/plan` | Task graph with dependencies + critical path |
+| `POST /api/nexus/sentinel/scan` | Code → security findings + score 0–100 |
+| `GET/POST /api/nexus/decisions` | Architecture Decision Records (auto-numbered) |
+| `POST /api/nexus/cognitive-load` | Complexity score + refactoring hints |
 
-### **Infrastructure**
-- 🐧 **Ubuntu 22.04** - Server operating system
-- 🌐 **Nginx** - Reverse proxy and static file serving
-- 🔒 **Let's Encrypt** - Free SSL/TLS certificates
-- 🔄 **Systemd** - Service management
-- ☁️ **Cloudflare** - DNS and DDoS protection
+All five are reachable from the **NEXUS** tab in the dashboard sidebar.
+
+📖 Quick start: **[NEXUS_QUICK_START.md](NEXUS_QUICK_START.md)** · Full integration report: **[NEXUS_INTEGRATION_COMPLETE.md](NEXUS_INTEGRATION_COMPLETE.md)**
 
 ---
 
-## 📸 Screenshots
+## 🛠️ MCP Server, Tools & Skills — what you actually get
 
-### Landing Page
-![Landing Page](./assets/landing.png)
+Devil Agent isn't a stub — it ships a **fully-loaded** skill & tool library out of the box.
 
-### Signup - Get Your 40-Word Key
-![Signup](./assets/signup.png)
+### 🧠 70+ pre-loaded "personality + utility" skills (`backend/default_skills.py`)
 
-### Dashboard - AI Chat
-![Chat Interface](./assets/chat.png)
+Every new account is auto-seeded with **70+ ready-to-use skills** that act like personas / prompt presets. Pick one in the chat and the assistant instantly switches mode.
 
-### Skills Management
-![Skills](./assets/skills.png)
+#### 💕 Personality / Tone skills (12)
 
-### Settings & Profile
-![Settings](./assets/settings.png)
+| Skill | Vibe |
+|---|---|
+| 💕 **Girlfriend Mode** | Sweet, caring, slightly clingy girlfriend texting vibe — pet names, emojis 🥺, asks about your day |
+| 😘 **Flirty Mode** | Playful, witty, confident charm — tasteful never crude |
+| 👯 **Funny Bestfriend** | Roasts you lovingly, hypes you up, never boring |
+| 🇮🇳 **Hindi Tapori** | Mumbai street-style Hindi swag |
+| 🇮🇳 **Hinglish Casual** | Hindi + English natural mix, very Indian chat vibe |
+| 🎭 **Shakespeare Mode** | Replies in Elizabethan English, "Hark!" and all |
+| 🏴‍☠️ **Pirate Talk** | Arrr matey, ship-deck banter |
+| 😈 **Sarcastic Boss** | Dry, sharp, eye-rolling corporate-overlord tone |
+| 📣 **Cheerleader Coach** | RELENTLESS POSITIVITY! GO! YOU GOT THIS! |
+| 🌿 **Therapist Calm** | Validating, gentle, asks reflective questions |
+| 👴 **Wise Grandpa** | Slow, wise, anecdote-driven advice |
+| 🆒 **Gen-Z Slang** | "lowkey", "no cap", "it's giving…" |
+
+#### 💻 Coding skills (8)
+Code Reviewer · Bug Hunter · Refactor Helper · Regex Builder · SQL Pro · API Designer · Unit Test Writer · Algorithm Explainer
+
+#### ✍️ Writing skills (11)
+Email Pro · Cold DM Writer · Resume Polisher · Cover Letter · Tweet Crafter · LinkedIn Post · Blog Outline · Story Writer · Poem Generator · Translator Pro · Grammar Fixer · Headline Punch-up
+
+#### 📅 Productivity (7)
+Daily Planner · Weekly Review · Goal Breakdown · Decision Helper · Meeting Notes · Brainstorm Engine · OKR Coach
+
+#### 💪 Health (6)
+Workout Buddy · Meal Planner · Recipe Maker · Sleep Helper · Mindfulness Guide · Habit Coach
+
+#### 💰 Finance · 🌍 Lifestyle · 🎓 Learning · 🎉 Fun · 🛠️ DevOps · 🛠️ Utility
+Budget Buddy · Investing 101 · Travel Planner · Gift Suggester · Movie Night Picker · Book Recommender · Dating Profile · Birthday Wisher · Anniversary Note · Teach Me Like I'm 5 · Flashcard Maker · Quiz Master · Language Tutor · Roast Me · Compliment Me · Pickup Lines · Excuse Generator · Joke Maker · Conspiracy (For Fun) · Argument Resolver · Apology Writer · Argue-Both-Sides · Name Brainstorm · Excuse-to-Boss · Docker Helper · Linux Sysadmin · Git Helper
+
+> 🎯 **Every skill is editable** — change the prompt, fork it, save it as your own, share it. Skills are first-class objects in MongoDB (CRUD, search, tags, categories).
+
+### 🧰 Native MCP Tools (35+ utility functions)
+
+Built into `backend/mcp_module.py` + `backend/mcp_extra_tools.py` — callable by the LLM via function-calling **and** exposed over MCP protocol to external clients (Claude Desktop, Cursor, Cline, Continue, etc.):
+
+| Category | Tools |
+|---|---|
+| 📁 **Filesystem** | `fs_read`, `fs_write`, `fs_list`, `fs_delete` |
+| 🖥️ **System** | `shell`, `http_fetch`, `python_exec` |
+| 🔐 **Crypto** | `hash` (md5/sha1/256/512), `uuid`, `password_gen`, `jwt_decode` |
+| 🔤 **Text** | `regex_match`, `regex_replace`, `text_case`, `slugify`, `word_count`, `html_strip`, `lorem_ipsum` |
+| 🔢 **Math** | `calc`, `math_eval`, `calc_percent`, `calc_tip`, `compound_interest`, `bmi_calc` |
+| 📅 **Time** | `timestamp_now`, `timestamp_parse`, `date_diff`, `age_calc` |
+| 🌐 **Web** | `url_encode`, `url_decode`, `json_parse`, `json_format`, `json_validate`, `json_minify` |
+| 🎲 **Random/Fun** | `dice_roll`, `coin_flip`, `random_pick` |
+| 🎨 **Conversion** | `color_convert` (hex/rgb/hsl), `unit_convert` (length/weight/temp/volume) |
+
+```bash
+GET  /api/mcp/tools         # list all tools (with JSON schema)
+POST /api/mcp/call          # invoke a tool
+```
+
+### 📚 Agent Core skill library (87 advanced SKILL.md packs)
+
+`agent_core/skills/` contains **87 production-grade skills** packaged the Anthropic-Skills way — each with `SKILL.md`, references, templates and scripts. Categories:
+
+| Pack | Count | Highlights |
+|---|---|---|
+| 🎨 **creative** | 19 | `baoyu-comic`, `baoyu-infographic`, `manim-video`, `excalidraw`, `pixel-art`, `p5js`, `humanizer`, `songwriting-and-ai-music`, `claude-design`, `touchdesigner-mcp` |
+| 💻 **software-development** | 11 | hermes-agent-skill-authoring, code review, refactor, language packs |
+| 📅 **productivity** | 9 | OKRs, weekly review, deep work, GTD |
+| 🤖 **mlops** | 9 | lambda-labs, model deploy, fine-tuning |
+| 🐙 **github** | 6 | repo ops, PR review, release flow |
+| 🍎 **apple** | 5 | macOS/iOS automation |
+| 🎬 **media** | 5 | image/audio/video processing |
+| 🔬 **research** | 5 | research-paper-writing (AAAI / ICML templates), llm-wiki, citations |
+| 🤖 **autonomous-ai-agents** | 4 | hermes-agent, claude-code, langgraph patterns |
+| 🛡️ **red-teaming** | 1 | `godmode` — adversarial prompts & jailbreak detection (for **defensive** research) |
+| 📨 **email · 📔 note-taking · 🎮 gaming · 🐳 devops · 🏠 smart-home · 📱 social-media · 📊 data-science · 🧩 mcp** | 16 | … |
+
+Plus an **`agent_core/optional-skills/`** tree (blockchain, finance, health, security, web-development, communication, migration) — opt-in extras.
+
+### 🆚 How this compares
+
+| Capability | **Devil Agent** | ChatGPT | Claude Projects | LangChain | AutoGPT | Open-WebUI |
+|---|:-:|:-:|:-:|:-:|:-:|:-:|
+| Personality / tone packs out of the box | ✅ 12 | ⚠️ 1 (Custom GPTs paid) | ⚠️ Style preset | ❌ | ❌ | ⚠️ manual |
+| 70+ pre-seeded prompt skills | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| 35+ native MCP tools | ✅ | ❌ | ⚠️ via plugins | ⚠️ via tools | ❌ | ⚠️ partial |
+| 87 SKILL.md packs (Anthropic-Skills format) | ✅ | ❌ | ⚠️ requires manual setup | ❌ | ❌ | ❌ |
+| Romance / companion personas | ✅ Girlfriend, Flirty, Funny BFF | ❌ (policy) | ❌ (policy) | ❌ | ❌ | ⚠️ self-add |
+| Indian/Hinglish/regional tones | ✅ Hindi Tapori, Hinglish | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Editable / forkable skills | ✅ first-class CRUD | ❌ | ⚠️ Projects | ❌ | ❌ | ⚠️ |
+| MCP-protocol compatible | ✅ | ❌ | ✅ desktop only | ⚠️ | ❌ | ⚠️ |
+| Self-hostable | ✅ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| Cost | **$0 (BYOK)** | $20/mo | $20/mo | Free + infra | Free + infra | Free + infra |
+
+**Translation:** the closest thing to Devil Agent's skill library would be installing LangChain + AutoGPT + Open-WebUI + Anthropic Skills + a custom MCP server + writing 70 prompt presets by hand. We did all of that for you.
 
 ---
 
-## 🚀 Quick Start
+## 🛠️ Tech Stack
 
-### Prerequisites
+**Backend** · FastAPI · Python 3.10+ · MongoDB 7 · Motor (async) · Pydantic v2 · Fernet · bcrypt · JWT · websockets · uvicorn
 
-- Python 3.10 or higher
-- Node.js 16 or higher
-- MongoDB 4.4 or higher
-- Nginx (for production deployment)
+**Frontend** · React 19 · TypeScript 5 · Tailwind CSS 3 · React Router 7 · React Markdown · Lucide Icons · xterm.js · Syntax Highlighter
 
-### Local Development
+**Agent Core** · Custom Python runtime · MCP protocol · pluggable provider layer (NVIDIA / OpenAI / Anthropic / Gemini / Ollama)
 
-#### 1️⃣ Clone the Repository
-
-```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/devil-agent-ai-platform.git
-cd devil-agent-ai-platform
-```
-
-#### 2️⃣ Backend Setup
-
-```bash
-cd backend
-
-# Create virtual environment
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Create .env file
-cp .env.example .env
-# Edit .env and add your configuration
-
-# Generate encryption key
-python3 -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())"
-# Add the generated key to .env as ENCRYPTION_KEY
-
-# Start the backend
-uvicorn server:app --host 0.0.0.0 --port 8001 --reload
-```
-
-#### 3️⃣ Frontend Setup
-
-```bash
-cd ../frontend
-
-# Install dependencies
-npm install
-
-# Create .env.local file
-echo "REACT_APP_API_URL=http://localhost:8001/api" > .env.local
-echo "REACT_APP_WS_URL=ws://localhost:8001/ws" >> .env.local
-
-# Start the frontend
-npm start
-```
-
-#### 4️⃣ Access the Application
-
-Open your browser and navigate to:
-- Frontend: http://localhost:3000
-- Backend API: http://localhost:8001
-- API Docs: http://localhost:8001/docs
-
----
-
-## 🔧 Configuration
-
-### Environment Variables
-
-#### Backend (.env)
-
-```bash
-# MongoDB Configuration
-MONGO_URL=mongodb://localhost:27017
-DB_NAME=devil_web
-
-# JWT Configuration
-JWT_SECRET=your-secure-jwt-secret-key-here
-
-# Encryption Key (for API keys storage)
-ENCRYPTION_KEY=your-fernet-encryption-key-here
-
-# NVIDIA API Configuration
-NVIDIA_API_KEY=nvapi-your-key-here
-
-# CORS Configuration (comma-separated)
-ALLOWED_ORIGINS=https://yourdomain.com,http://localhost:3000
-```
-
-#### Frontend (.env.production)
-
-```bash
-REACT_APP_API_URL=https://yourdomain.com/api
-REACT_APP_WS_URL=wss://yourdomain.com/ws
-```
-
----
-
-## 📖 API Documentation
-
-### Authentication
-
-#### Signup
-```http
-POST /api/auth/signup
-```
-**Response:**
-```json
-{
-  "token": "jwt_token_here",
-  "user_id": "user_id_here",
-  "key": "40-word-key-here",
-  "message": "SAVE THIS KEY! It cannot be recovered."
-}
-```
-
-#### Login
-```http
-POST /api/auth/login
-Content-Type: application/json
-
-{
-  "key": "your-40-word-key-here"
-}
-```
-
-### Chat
-
-#### Send Message
-```http
-POST /api/chat
-Authorization: Bearer <token>
-Content-Type: application/json
-
-{
-  "conversation_id": "optional_conversation_id",
-  "message": "Your message here",
-  "model": "qwen/qwen3-next-80b-a3b-instruct"
-}
-```
-
-### Skills
-
-#### List Skills
-```http
-GET /api/skills?skip=0&limit=50&search=python&category=code
-Authorization: Bearer <token>
-```
-
-#### Create Skill
-```http
-POST /api/skills
-Authorization: Bearer <token>
-Content-Type: application/json
-
-{
-  "name": "My Skill",
-  "description": "Description here",
-  "code": "print('Hello World')",
-  "language": "python",
-  "category": "automation",
-  "tags": ["python", "automation"]
-}
-```
-
-📘 **Full API documentation available at:** `https://yourdomain.com/docs`
-
----
-
-## 🚀 Production Deployment
-
-### VPS Deployment (Ubuntu)
-
-#### 1️⃣ Prepare the Server
-
-```bash
-# Update system
-sudo apt-get update && sudo apt-get upgrade -y
-
-# Install dependencies
-sudo apt-get install -y python3-pip python3-venv nginx mongodb certbot python3-certbot-nginx
-
-# Install Node.js
-curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-sudo apt-get install -y nodejs
-```
-
-#### 2️⃣ Clone and Setup
-
-```bash
-# Clone repository
-cd /home/ubuntu
-git clone https://github.com/YOUR_GITHUB_USERNAME/devil-agent-ai-platform.git devil_agent
-cd devil_agent
-
-# Backend setup
-cd backend
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-cp .env.example .env
-# Edit .env with production values
-deactivate
-
-# Frontend setup
-cd ../frontend
-npm install --legacy-peer-deps
-npm run build
-```
-
-#### 3️⃣ Create Systemd Service
-
-```bash
-sudo tee /etc/systemd/system/devil-backend.service > /dev/null <<EOF
-[Unit]
-Description=Devil Agent Backend API
-After=network.target mongod.service
-
-[Service]
-Type=simple
-User=ubuntu
-WorkingDirectory=/home/ubuntu/devil_agent/backend
-Environment="PATH=/home/ubuntu/devil_agent/backend/venv/bin"
-ExecStart=/home/ubuntu/devil_agent/backend/venv/bin/uvicorn server:app --host 0.0.0.0 --port 8001 --workers 4
-Restart=always
-RestartSec=10
-
-[Install]
-WantedBy=multi-user.target
-EOF
-
-sudo systemctl daemon-reload
-sudo systemctl enable devil-backend
-sudo systemctl start devil-backend
-```
-
-#### 4️⃣ Configure Nginx
-
-```bash
-sudo tee /etc/nginx/sites-available/devil_agent > /dev/null <<'EOF'
-server {
-    listen 80;
-    server_name yourdomain.com www.yourdomain.com;
-    
-    client_max_body_size 50M;
-    
-    gzip on;
-    gzip_vary on;
-    gzip_min_length 1024;
-    gzip_types text/plain text/css text/xml text/javascript application/json application/javascript;
-    
-    location / {
-        root /home/ubuntu/devil_agent/frontend/build;
-        try_files $uri $uri/ /index.html;
-    }
-    
-    location /api/ {
-        proxy_pass http://localhost:8001/api/;
-        proxy_http_version 1.1;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    }
-    
-    location /ws/ {
-        proxy_pass http://localhost:8001/ws/;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection "upgrade";
-    }
-}
-EOF
-
-sudo ln -sf /etc/nginx/sites-available/devil_agent /etc/nginx/sites-enabled/
-sudo nginx -t && sudo systemctl reload nginx
-```
-
-#### 5️⃣ Setup SSL
-
-```bash
-sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com
-```
+**Infra** · Ubuntu 22.04 · Nginx · Let's Encrypt · systemd · Cloudflare (optional)
 
 ---
 
 ## 🏗️ Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                        Cloudflare                            │
-│                     (DNS + DDoS Protection)                   │
-└─────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-┌─────────────────────────────────────────────────────────────┐
-│                      Nginx (Port 443)                        │
-│                  (Reverse Proxy + SSL)                       │
-└─────────────────────────────────────────────────────────────┘
-                              │
-                ┌─────────────┴─────────────┐
-                │                           │
-                ▼                           ▼
-    ┌───────────────────┐       ┌───────────────────┐
-    │   React Frontend  │       │  FastAPI Backend  │
-    │   (Port 3000)     │       │   (Port 8001)     │
-    │   - Static Files  │       │   - JWT Auth      │
-    │   - SPA           │       │   - NVIDIA API    │
-    └───────────────────┘       └───────────────────┘
-                                            │
-                                            ▼
-                                ┌───────────────────┐
-                                │     MongoDB       │
-                                │   (Port 27017)    │
-                                │   - Users         │
-                                │   - Conversations │
-                                │   - Skills        │
-                                └───────────────────┘
+┌────────────────────────────────────────────────────────────────┐
+│   Browser (React 19 SPA)         │   3rd-party MCP / OpenAI    │
+│   - 40-word login                │      compatible clients     │
+│   - Chat / Skills / Terminal     │                             │
+│   - NEXUS tabs (5 sections)      │                             │
+└──────────────┬─────────────────────────────────┬───────────────┘
+               │  HTTPS / WSS                    │  Bearer auth
+               ▼                                 ▼
+┌──────────────────────────────────────────────────────────────────┐
+│                    Nginx 1.24 (reverse proxy + SSL)              │
+└────────┬────────────────────────┬────────────────────────────────┘
+         │                        │
+         ▼                        ▼
+┌──────────────────┐    ┌──────────────────────────────────────┐
+│ FastAPI Backend  │    │  Agent Core (OpenAI-compat runtime)  │
+│ :8001            │    │  :9241  /agent/v1/*                  │
+│                  │    │  - tools, skills, browser, terminal  │
+│ /api/auth        │    │  - MCP server                        │
+│ /api/chat        │    │  - memory / vector store             │
+│ /api/skills      │    └──────────────┬───────────────────────┘
+│ /api/nexus/*     │                   │
+│ /api/mcp/*       │                   │
+│ /ws/terminal     │                   │
+└────────┬─────────┘                   │
+         │                             │
+         ▼                             ▼
+   ┌────────────────────────────────────────┐
+   │   MongoDB 7  (users, chats, skills,    │
+   │              ADRs, vault, audit log)   │
+   └────────────────────────────────────────┘
 ```
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Python **3.10+**
+- Node.js **20+** (use `nvm install 20`)
+- MongoDB **6+** running locally or remote
+- An NVIDIA API key (free at [build.nvidia.com](https://build.nvidia.com/)) — or your own OpenAI / Anthropic key
+
+### 1️⃣ Clone
+
+```bash
+git clone https://github.com/vikrant-project/devil-agent-ai-platform.git devil_agent
+cd devil_agent
+```
+
+### 2️⃣ Backend
+
+```bash
+cd backend
+python3 -m venv venv && source venv/bin/activate
+pip install -r requirements.txt
+
+cp .env.example .env
+# Generate secrets:
+python3 -c "import secrets; print('JWT_SECRET=' + secrets.token_urlsafe(32))" >> .env
+python3 -c "from cryptography.fernet import Fernet; print('ENCRYPTION_KEY=' + Fernet.generate_key().decode())" >> .env
+# Edit .env and add NVIDIA_API_KEY
+
+uvicorn server:app --host 0.0.0.0 --port 8001 --reload
+```
+
+### 3️⃣ Frontend
+
+```bash
+cd ../frontend
+npm install --legacy-peer-deps
+echo "REACT_APP_API_URL=http://localhost:8001/api"  > .env.local
+echo "REACT_APP_WS_URL=ws://localhost:8001/ws"    >> .env.local
+npm start
+```
+
+### 4️⃣ Agent Core (optional)
+
+```bash
+cd ../agent_core
+cp .env.example .env
+# Edit and add NVIDIA_API_KEY + a strong API_SERVER_KEY
+pip install -e .
+./start-gateway.sh
+```
+
+### 5️⃣ Open
+
+- 🌐 Web app → http://localhost:3000
+- 📘 API docs → http://localhost:8001/docs
+- 🧠 Agent OpenAI-compat → http://localhost:9241/v1
+
+---
+
+## 🔧 Configuration
+
+### `backend/.env`
+
+```env
+MONGO_URL=mongodb://localhost:27017
+DB_NAME=devil_web
+JWT_SECRET=<run: python3 -c "import secrets;print(secrets.token_urlsafe(32))">
+ENCRYPTION_KEY=<run: python3 -c "from cryptography.fernet import Fernet;print(Fernet.generate_key().decode())">
+NVIDIA_API_KEY=nvapi-YOUR_NVIDIA_API_KEY_HERE
+ALLOWED_ORIGINS=https://your-domain.com,http://localhost:3000
+```
+
+### `agent_core/.env`
+
+```env
+NVIDIA_API_KEY=nvapi-YOUR_NVIDIA_API_KEY_HERE
+DEFAULT_PROVIDER=nvidia
+DEFAULT_MODEL=meta/llama-3.3-70b-instruct
+API_SERVER_ENABLED=true
+API_SERVER_HOST=0.0.0.0
+API_SERVER_PORT=9241
+API_SERVER_KEY=<openssl rand -hex 32>
+GATEWAY_ALLOW_ALL_USERS=true
+DEVIL_HOME=~/.devil
+```
+
+### `frontend/.env.production`
+
+```env
+REACT_APP_API_URL=https://your-domain.com
+REACT_APP_WS_URL=wss://your-domain.com/ws
+```
+
+> ⚠️ **Never commit `.env`.** Use the provided `.env.example` files as templates. Real secrets stay on the server.
+
+---
+
+## 🚀 Production Deployment
+
+```bash
+# 1. Server prep
+sudo apt-get update && sudo apt-get install -y \
+    python3-pip python3-venv nginx mongodb-server \
+    certbot python3-certbot-nginx
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# 2. Clone & build
+cd /path/to/devil_agent
+git clone https://github.com/vikrant-project/devil-agent-ai-platform.git .
+cd backend && python3 -m venv venv && source venv/bin/activate \
+   && pip install -r requirements.txt && deactivate
+cd ../frontend && npm install --legacy-peer-deps && npm run build
+
+# 3. systemd unit (see full file in docs/DEPLOYMENT_REPORT.md)
+sudo systemctl enable --now devil-backend devil-agent-gateway
+
+# 4. Nginx + SSL
+sudo cp deploy/nginx.conf /etc/nginx/sites-available/devil_agent
+sudo ln -s /etc/nginx/sites-available/devil_agent /etc/nginx/sites-enabled/
+sudo nginx -t && sudo systemctl reload nginx
+sudo certbot --nginx -d your-domain.com -d www.your-domain.com
+```
+
+Full step-by-step: **[docs/DEPLOYMENT_REPORT.md](docs/DEPLOYMENT_REPORT.md)** · **[docs/DEPLOYMENT_SUMMARY.md](docs/DEPLOYMENT_SUMMARY.md)**
+
+---
+
+## 📖 API Reference
+
+### Auth
+| Method | Path | Description |
+|---|---|---|
+| POST | `/api/auth/signup` | Returns JWT + 40-word key (save it!) |
+| POST | `/api/auth/login` | Body: `{"key": "..."}` → JWT |
+| GET  | `/api/auth/me` | Current user profile |
+
+### Chat
+| Method | Path | Description |
+|---|---|---|
+| POST | `/api/chat` | Send a message |
+| GET  | `/api/conversations` | List conversations |
+| GET  | `/api/conversations/{id}` | Get one conversation |
+
+### Skills
+| Method | Path | Description |
+|---|---|---|
+| GET  | `/api/skills?search=&category=&skip=&limit=` | List/search |
+| POST | `/api/skills` | Create skill |
+| GET/PUT/DELETE | `/api/skills/{id}` | CRUD |
+
+### NEXUS
+| Method | Path | Description |
+|---|---|---|
+| POST | `/api/nexus/brief` | Strategic brief |
+| POST | `/api/nexus/plan` | Task graph |
+| POST | `/api/nexus/sentinel/scan` | Security scan |
+| GET/POST | `/api/nexus/decisions` | ADRs |
+| POST | `/api/nexus/cognitive-load` | Complexity |
+
+### MCP
+| Method | Path | Description |
+|---|---|---|
+| GET  | `/api/mcp/tools` | List available MCP tools |
+| POST | `/api/mcp/call` | Invoke a tool |
+
+### Agent Core (OpenAI-compatible)
+| Method | Path |
+|---|---|
+| GET  | `/agent/v1/models` |
+| POST | `/agent/v1/chat/completions` |
+| GET  | `/agent/health` |
+
+Interactive docs at `https://your-domain.com/docs`.
 
 ---
 
 ## 🔐 Security Features
 
-- 🔑 **40-Word Key Authentication** - Unique, memorable, and secure
-- 🔒 **Encrypted API Keys** - Fernet encryption for sensitive data
-- 🛡️ **JWT Tokens** - Stateless authentication with expiration
-- 🚫 **Rate Limiting** - Protection against brute-force attacks
-- 🔍 **Input Sanitization** - Prevention of injection attacks
-- 📝 **Security Logs** - Audit trail for suspicious activities
-- 🌐 **HTTPS Only** - SSL/TLS encryption for all traffic
-- 🎯 **CORS Whitelist** - Restricted origin access
-- 🔐 **bcrypt Hashing** - Secure password hashing
-- 🏗️ **Indexed Lookups** - O(1) authentication performance
+- 🔑 **40-word zero-knowledge key** — server stores indexed prefix hash only
+- 🔒 **Fernet-encrypted vault** — per-user API keys never stored in cleartext
+- 🛡️ **JWT with 24 h expiry + rotation** — short-lived bearer tokens
+- 🚫 **Rate-limiting** — per-IP and per-user, configurable
+- 🧱 **CORS allow-list** — explicit origins only
+- 📝 **Tamper-evident audit log** — every auth event recorded
+- 🔍 **Built-in Sentinel scan** — OWASP Top 10 + hardcoded secret detection on user-submitted code
+- 🌐 **HTTPS only** in production (Let's Encrypt + Cloudflare)
+- 🧪 **Continuous CVE check** on dependencies (`pip-audit`, `npm audit` in CI)
 
----
-
-## 📊 Performance Optimizations
-
-### Backend
-- ✅ **O(1) Login Performance** - Key prefix indexing (fixed from O(n))
-- ✅ **Connection Pooling** - MongoDB connection pooling (10-50 connections)
-- ✅ **Database Indexing** - Optimized compound indexes
-- ✅ **Async I/O** - Non-blocking operations with asyncio
-- ✅ **Response Compression** - Gzip compression enabled
-- ✅ **Caching** - In-memory caching for user data (5-min TTL)
-- ✅ **Pagination** - Efficient data loading for large datasets
-- ✅ **Rate Limiting** - Per-user request throttling
-
-### Frontend
-- ✅ **Code Splitting** - Lazy loading of routes
-- ✅ **Asset Optimization** - Minified CSS/JS bundles
-- ✅ **React 19 Features** - Concurrent rendering
-- ✅ **Optimized Re-renders** - React.memo and useMemo
-- ✅ **Static Asset Caching** - 1-year cache for immutable assets
-- ✅ **Bundle Size** - Optimized build (< 500KB gzipped)
-
----
-
-## 🧪 Testing
-
-### Run Backend Tests
-```bash
-cd backend
-pytest tests/ -v --cov=server
-```
-
-### Run Frontend Tests
-```bash
-cd frontend
-npm test
-```
-
-### E2E Tests
-```bash
-npm run test:e2e
-```
-
----
-
-## 🤝 Contributing
-
-We welcome contributions! Please follow these steps:
-
-1. **Fork the repository**
-2. **Create your feature branch** (`git checkout -b feature/AmazingFeature`)
-3. **Commit your changes** (`git commit -m 'Add some AmazingFeature'`)
-4. **Push to the branch** (`git push origin feature/AmazingFeature`)
-5. **Open a Pull Request**
-
-### Development Guidelines
-
-- Follow PEP 8 for Python code
-- Use ESLint and Prettier for TypeScript/React code
-- Write tests for new features
-- Update documentation as needed
-- Keep commits atomic and well-documented
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 👥 Team
-
-**Lead Developer:** Vikrant  
-**Organization:** [YOUR_GITHUB_USERNAME](https://github.com/YOUR_GITHUB_USERNAME)
-
----
-
-## 🙏 Acknowledgments
-
-- [NVIDIA](https://www.nvidia.com/) for providing the Qwen 80B model API
-- [FastAPI](https://fastapi.tiangolo.com/) for the amazing web framework
-- [React](https://reactjs.org/) team for the best UI library
-- [MongoDB](https://www.mongodb.com/) for the flexible database
-- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
-- The open-source community for inspiration and tools
-
----
-
-## 📞 Support
-
-Need help? Here's how to get support:
-
-- 📧 **Email:** support@your-domain.com
-- 💬 **Discord:** [Join our community](#)
-- 🐛 **Issues:** [GitHub Issues](https://github.com/YOUR_GITHUB_USERNAME/devil-agent-ai-platform/issues)
-- 📚 **Docs:** [Full Documentation](https://docs.your-domain.com)
+🛡️ Responsible disclosure: see **[agent_core/SECURITY.md](agent_core/SECURITY.md)**.
 
 ---
 
 ## 🗺️ Roadmap
 
-### Q2 2026
-- [x] Core platform launch
-- [x] 40-word key authentication
-- [x] NVIDIA Qwen 80B integration
-- [x] Skills management
-- [ ] Team workspaces
-- [ ] Conversation sharing
+### ✅ Shipped
+- 40-word key auth · NVIDIA Qwen integration · Skills CRUD · WebSocket terminal · NEXUS OS · MCP server · OpenAI-compat agent gateway
 
-### Q3 2026
-- [ ] Multi-model support (GPT-5, Claude, Gemini)
-- [ ] Voice input/output
-- [ ] Mobile apps (iOS/Android)
-- [ ] Plugin system
-- [ ] Advanced analytics
-
-### Q4 2026
-- [ ] Marketplace for skills
-- [ ] AI model fine-tuning
-- [ ] Enterprise SSO integration
-- [ ] Advanced collaboration features
-- [ ] API rate plans
+### 🔜 Next
+- [ ] Team workspaces & shared vaults
+- [ ] Voice in/out (Whisper + TTS)
+- [ ] Mobile apps (Expo / React Native)
+- [ ] Marketplace for community skills
+- [ ] Multi-provider auto-router (cost-aware)
+- [ ] Browser-extension companion
+- [ ] On-device Ollama provider out-of-the-box
 
 ---
 
-## ⭐ Star History
+## 🤝 Contributing
 
-[![Star History Chart](https://api.star-history.com/svg?repos=YOUR_GITHUB_USERNAME/devil-agent-ai-platform&type=Date)](https://star-history.com/#YOUR_GITHUB_USERNAME/devil-agent-ai-platform&Date)
+Pull requests are welcome — please read **[agent_core/CONTRIBUTING.md](agent_core/CONTRIBUTING.md)** first.
+
+1. Fork the repo
+2. `git checkout -b feature/your-thing`
+3. Commit with conventional-commit style (`feat:`, `fix:`, `docs:`)
+4. Run linters: `ruff check backend/ && npm run lint --prefix frontend`
+5. Open a PR — CI must be green
+
+---
+
+## 📄 License
+
+MIT © Vikrant Project — see **[LICENSE](LICENSE)**.
+
+---
+
+## 🌟 Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=vikrant-project/devil-agent-ai-platform&type=Date)](https://star-history.com/#vikrant-project/devil-agent-ai-platform&Date)
+
+---
+
+## 🏷️ Tags
+
+`#ai` `#artificial-intelligence` `#autonomous-agents` `#ai-agent` `#agentic-ai` `#llm` `#large-language-models` `#openai-compatible` `#openai-api` `#anthropic` `#claude` `#gpt` `#nvidia` `#qwen` `#llama` `#nvidia-nim` `#fastapi` `#python` `#react` `#reactjs` `#react19` `#typescript` `#tailwindcss` `#mongodb` `#self-hosted` `#self-hostable` `#open-source` `#mit-license` `#mcp` `#model-context-protocol` `#mcp-server` `#nexus` `#engineering-os` `#devops` `#ai-platform` `#ai-assistant` `#chatbot` `#chatgpt-alternative` `#claude-alternative` `#copilot-alternative` `#characterai-alternative` `#character-ai` `#ai-companion` `#ai-girlfriend` `#ai-personality` `#persona` `#prompt-library` `#prompt-templates` `#prompt-engineering` `#role-play` `#hinglish` `#hindi-ai` `#indian-ai` `#zero-knowledge` `#zero-knowledge-auth` `#40-word-key` `#bip39` `#passphrase-auth` `#fernet-encryption` `#encrypted-vault` `#jwt` `#websocket` `#xterm` `#webterm` `#in-browser-terminal` `#skills` `#tools` `#tool-use` `#function-calling` `#rag` `#vector-search` `#qdrant` `#agent-runtime` `#autonomous-engineering` `#decision-records` `#adr` `#static-analysis` `#owasp` `#security-scan` `#cognitive-load` `#code-complexity` `#cyclomatic-complexity` `#sentinel` `#multi-agent` `#orchestration` `#workflow-automation` `#devil-agent` `#privacy-first` `#privacy` `#no-email` `#no-password` `#offline-first` `#byok` `#bring-your-own-key` `#cost-optimization` `#vps` `#ubuntu` `#nginx` `#letsencrypt` `#docker` `#dockerized` `#kubernetes-ready` `#cloudflare` `#hacktoberfest`
 
 ---
 
 <div align="center">
 
-**Made with ❤️ and AI**
+### Built by humans + agents — for the people who deserve their own AI.
 
-[⬆ Back to Top](#-devil-agent---ai-powered-assistant-platform)
+**[⬆ Back to Top](#-devil-agent--autonomous-ai-engineering-platform)**
 
 </div>

@@ -157,7 +157,7 @@ The Devil Agent AI-powered assistant platform has been successfully modified, op
 
 #### Nginx Configuration ✅
 ```nginx
-- Frontend: Serves static files from /home/ubuntu/devil_agent/frontend/build
+- Frontend: Serves static files from /path/to/devil_agent/frontend/build
 - API Proxy: /api/* → http://localhost:8001/api/*
 - WebSocket Proxy: /ws/* → http://localhost:8001/ws/*
 - SSL: Managed by Certbot

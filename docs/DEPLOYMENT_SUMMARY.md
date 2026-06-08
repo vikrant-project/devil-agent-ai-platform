@@ -15,7 +15,7 @@
 - Now API calls correctly resolve to: `https://your-domain.com/api/auth/signup`
 
 **Files Modified:**
-- `/home/ubuntu/devil_agent/frontend/.env.production`
+- `/path/to/devil_agent/frontend/.env.production`
 
 ---
 
@@ -29,7 +29,7 @@
 - Replaced "Hermes-based" with "Devil Agent-based"
 
 **Files Modified:**
-- `/home/ubuntu/devil_agent/README.md`
+- `/path/to/devil_agent/README.md`
 
 ---
 
@@ -45,8 +45,8 @@
 - Updated `Dashboard.tsx`: Changed `/api/chat/${id}` → `/api/conversations/${id}`
 
 **Files Modified:**
-- `/home/ubuntu/devil_agent/frontend/src/pages/Signup.tsx`
-- `/home/ubuntu/devil_agent/frontend/src/pages/Dashboard.tsx`
+- `/path/to/devil_agent/frontend/src/pages/Signup.tsx`
+- `/path/to/devil_agent/frontend/src/pages/Dashboard.tsx`
 
 ---
 
@@ -139,7 +139,7 @@ curl -X POST https://your-domain.com/api/auth/signup \
 ## 📁 Project Structure
 
 ```
-/home/ubuntu/devil_agent/
+/path/to/devil_agent/
 ├── backend/                    # FastAPI backend
 │   ├── server.py              # Main API server
 │   ├── requirements.txt       # Python dependencies
@@ -175,13 +175,13 @@ curl -X POST https://your-domain.com/api/auth/signup \
 - **Domain:** your-domain.com (Cloudflare DNS)
 - **SSL:** Let's Encrypt (managed by Certbot)
 - **OS:** Ubuntu
-- **Project Path:** /home/ubuntu/devil_agent/
+- **Project Path:** /path/to/devil_agent/
 
 ### **Nginx Configuration:**
 ```nginx
 # Frontend static files
 location / {
-    root /home/ubuntu/devil_agent/frontend/build;
+    root /path/to/devil_agent/frontend/build;
     try_files $uri $uri/ /index.html;
 }
 
@@ -207,11 +207,11 @@ location /agent/ {
 ### **Systemd Services:**
 ```ini
 # devil-backend.service
-WorkingDirectory=/home/ubuntu/devil_agent/backend
-ExecStart=/home/ubuntu/devil_agent/backend/venv/bin/uvicorn server:app --host 0.0.0.0 --port 8001 --workers 2
+WorkingDirectory=/path/to/devil_agent/backend
+ExecStart=/path/to/devil_agent/backend/venv/bin/uvicorn server:app --host 0.0.0.0 --port 8001 --workers 2
 
 # devil-gateway.service
-WorkingDirectory=/home/ubuntu/devil_agent/agent_core/gateway
+WorkingDirectory=/path/to/devil_agent/agent_core/gateway
 ExecStart=/usr/bin/python3 run.py
 ```
 
@@ -302,7 +302,7 @@ REACT_APP_WS_URL=wss://your-domain.com/ws
 ssh -i your-ssh-key.pem ubuntu@YOUR_VPS_IP
 
 # Navigate to project
-cd /home/ubuntu/devil_agent
+cd /path/to/devil_agent
 
 # Check services
 sudo systemctl status devil-backend
@@ -402,7 +402,7 @@ curl https://your-domain.com/agent/v1/chat/completions \
 ### Updates:
 ```bash
 # Update code
-cd /home/ubuntu/devil_agent
+cd /path/to/devil_agent
 git pull origin main
 
 # Update backend dependencies

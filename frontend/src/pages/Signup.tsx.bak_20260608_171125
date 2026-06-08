@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Flame, Terminal, Zap, Shield, Copy, Check, AlertTriangle, Download } from 'lucide-react';
+import { Flame, Terminal, Zap, Shield, Copy, Check, AlertTriangle } from 'lucide-react';
 
 const API_URL = process.env.REACT_APP_API_URL || '';
 
@@ -43,27 +43,6 @@ const Signup: React.FC = () => {
     navigator.clipboard.writeText(secretKey);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
-  };
-
-  const downloadKey = () => {
-    const content =
-      `Devil Agent - Account Recovery Key\n` +
-      `=====================================\n\n` +
-      `Generated: ${new Date().toISOString()}\n\n` +
-      `WARNING: This is the ONLY copy of your key.\n` +
-      `Anyone with this key can access your account.\n` +
-      `Store it in a password manager or encrypted file.\n\n` +
-      `KEY:\n${secretKey}\n\n` +
-      `Login at: https://your-domain.com/login\n`;
-    const blob = new Blob([content], { type: 'text/plain' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `devil-agent-key-${new Date().toISOString().slice(0, 10)}.txt`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
   };
 
   const confirmAndContinue = () => {
@@ -138,30 +117,20 @@ const Signup: React.FC = () => {
 
             <div className="relative">
               <div className="key-display bg-[#0a0a0a] rounded-lg p-6 border-2 border-[#FF4444] mb-6">
-                <p className="text-white font-mono text-sm leading-relaxed break-all" data-testid="signup-secret-key">
+                <p className="text-white font-mono text-sm leading-relaxed break-all">
                   {secretKey}
                 </p>
               </div>
               
               <button
                 onClick={copyKey}
-                className="absolute top-4 right-16 p-2 bg-[#333] rounded-lg hover:bg-[#444] transition-colors"
-                data-testid="signup-copy-btn"
-                title="Copy key"
+                className="absolute top-4 right-4 p-2 bg-[#333] rounded-lg hover:bg-[#444] transition-colors"
               >
                 {copied ? (
                   <Check className="w-5 h-5 text-green-400" />
                 ) : (
                   <Copy className="w-5 h-5 text-gray-400" />
                 )}
-              </button>
-              <button
-                onClick={downloadKey}
-                className="absolute top-4 right-4 p-2 bg-[#333] rounded-lg hover:bg-[#444] transition-colors"
-                data-testid="signup-download-btn"
-                title="Download key as .txt"
-              >
-                <Download className="w-5 h-5 text-gray-400" />
               </button>
             </div>
 
