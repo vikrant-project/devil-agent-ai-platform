@@ -1,0 +1,11 @@
+#!/bin/bash
+cd /home/ubuntu/devil_agent/agent_core
+source .venv/bin/activate
+export PYTHONPATH="/home/ubuntu/devil_agent/agent_core:$PYTHONPATH"
+export DEVIL_HOME="/home/ubuntu/.devil"
+set -a; source .env; set +a
+if [ $# -eq 0 ]; then
+    python cli.py --provider nvidia --model meta/llama-3.3-70b-instruct
+else
+    python cli.py --provider nvidia --model meta/llama-3.3-70b-instruct "$@"
+fi
